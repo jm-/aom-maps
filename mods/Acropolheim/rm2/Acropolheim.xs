@@ -434,7 +434,7 @@ void main(void){
          rmAddObjectDefConstraint(farID, TCavoidImpassableLand);
          rmAddObjectDefConstraint(farID, TCavoidStart);
          rmAddObjectDefConstraint(farID, TCavoidSettlement);
-         for(attempt = 6; < 15){
+         for(attempt = 2; < 8){
             rmPlaceObjectDefAtLoc(farID, p, rmGetPlayerX(p), rmGetPlayerZ(p), 1);
             if(rmGetNumberUnitsPlaced(farID) > 0){
                break;
@@ -481,7 +481,7 @@ void main(void){
             rmAddObjectDefConstraint(farID, TCavoidImpassableLand);
             rmAddObjectDefConstraint(farID, TCavoidStart);
             rmAddObjectDefConstraint(farID, TCavoidSettlement);
-            for(attempt = 4; < 12){
+            for(attempt = 4; < 10){
                rmPlaceObjectDefAtLoc(farID, p, rmGetPlayerX(p), rmGetPlayerZ(p), 1);
                if(rmGetNumberUnitsPlaced(farID) > 0){
                   break;
@@ -494,7 +494,7 @@ void main(void){
             rmAddObjectDefConstraint(farID, TCavoidImpassableLand);
             rmAddObjectDefConstraint(farID, TCavoidStart);
             rmAddObjectDefConstraint(farID, TCavoidSettlement);
-            for(attempt = 6; < 15){
+            for(attempt = 2; < 10){
                rmPlaceObjectDefAtLoc(farID, p, rmGetPlayerX(p), rmGetPlayerZ(p), 1);
                if(rmGetNumberUnitsPlaced(farID) > 0){
                   break;
@@ -850,6 +850,9 @@ void main(void){
    for(i=0; <cNumberTeams){
       failCount=0;
       int forestCount=rmRandInt(4, 5)*rmGetNumberPlayersOnTeam(i);
+      if(cMapSize == 1){
+         forestCount = 2.25*forestCount;
+      }
       if(cMapSize == 2){
          forestCount = 2.25*forestCount;
       }
